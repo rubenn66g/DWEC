@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #fff;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+}
+
+#bola, #barra, .bloque {
+    position: absolute;
+}
+
+#juego-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: #111;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#bola {
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff4d4d;
+}
+
+
+#barra {
+    background-color: #00bfff;
+    height: 15px;
+    width: 80px;
+    bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00e0ff;
+}
+
+/* Bloques */
+.bloque {
+    background-color: #ffeb3b;
+    height: 20px;
+    width: 75px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #fff;
+}
+
+/* Vidas */
+#vidas {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#vidas .vida {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+
+/* Mensaje de ganar/perder */
+#ganar {
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4444;
+    text-shadow: 1px 1px 5px #000;
+}
+#reiniciar {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bfff;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 0 5px #000;
+}
+
+#reiniciar:hover {
+    background-color: #009acd;
+}

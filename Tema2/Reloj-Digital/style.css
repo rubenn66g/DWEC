@@ -1,0 +1,37 @@
+body {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#caja {
+    background-color: #34495e;
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#reloj {
+    font-size: 4em;
+    font-family: Arial;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#fecha {
+    font-size: 2em;
+    color: white;
+}
+

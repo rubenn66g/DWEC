@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f3f5;
+}
+.contenedor {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+input {
+    padding: 8px;
+    width: 70%;
+    margin-right: 5px;
+}
+button {
+    padding: 8px 12px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.editar, .eliminar {
+    cursor: pointer;
+    margin-left: 5px;
+}
+.editar { color: green; }
+.eliminar { color: red; }
+.boton-limpiar {
+    margin-top: 20px;
+    color: red;
+    cursor: pointer;
+}
