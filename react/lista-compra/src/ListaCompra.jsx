@@ -3,11 +3,25 @@ import Item from './Item';
 
 function ListaCompra() {
 
-    const [listaCompra, setlistaCompra] = useState(["pan","azucar"]);
+    let datosInicialesPrueba={"items":[
+        {
+            "nombre":"Arroz",
+            "cantidad":3
+        },
+        {
+            "nombre":"Pan",
+            "cantidad":2
+        }
+    ]};
+    const [listaCompra, setlistaCompra] = useState(datosInicialesPrueba.items);
     const [contenidoInput, setcontenidoInput] = useState("");
 
     function pulsoBoton() {
-        setlistaCompra([...listaCompra, contenidoInput]);
+        let lista={
+            "nombre":contenidoInput,
+            "cantidad":1
+        }
+        setlistaCompra([...listaCompra, lista]);
         console.log(listaCompra);
 
         setcontenidoInput("");
@@ -19,19 +33,19 @@ function ListaCompra() {
 
     function actualizaElemento(nuevoTexto, id) {
     const nuevaLista = [...listaCompra]; 
-    nuevaLista[id] = nuevoTexto;     
+    nuevaLista[id].nombre = nuevoTexto;     
     setlistaCompra(nuevaLista);          
 }
 
 
     let maquetaListaCompra = listaCompra.map((elementoDeArray, indice) =>
         <Item key={indice}
-            nombre={elementoDeArray}
+            nombre={elementoDeArray.nombre}
+            cantidad={elementoDeArray.cantidad}
             onDelete={() => borraElemento(indice)}
             onNuevoTexto={(texto) => actualizaElemento(texto,indice)}
         />
     );
-
     return (
         <>
             <input

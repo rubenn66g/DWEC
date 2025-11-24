@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-function Item({ nombre, onDelete, onNuevoTexto }) {
+function Item({ nombre, onDelete,cantidad, onNuevoTexto }) {
 
     const [modoEdicion, setmodoEdicion] = useState(false);
     const [nombreEditado, setnombreEditado] = useState(nombre);
+    const[cantidades,setCantidades]=useState(cantidad);
     let jsxResultado;
 
     function entraEnEdicion() {
@@ -23,7 +24,7 @@ function Item({ nombre, onDelete, onNuevoTexto }) {
     if (!modoEdicion)
         jsxResultado = (
             <li>
-                {nombre}
+                {nombre} - {cantidades}
                 <button onClick={entraEnEdicion}>Editar</button>
                 <button onClick={onDelete}>Borrar</button>
             </li>
