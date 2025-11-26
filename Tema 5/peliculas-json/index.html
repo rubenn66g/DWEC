@@ -4,30 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
     <script src="index.js"></script>
-    <style>
-        body{
-            background-image:url("https://img.freepik.com/fotos-premium/campo-estrellas-contra-cielo-noche_1048944-25328435.jpg?semt=ais_hybrid&w=740&q=80");
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-        }
-        #contendor{
-            width: 50%;
-            height: 50%;
-            display: flex;
-            border-radius: 10%;
-            border: 2px solid white;
-            flex-direction: column;
-        }
-        #Cargar{
-            background-color: white;
-            color: black;
-        }
-    </style>
 </head>
 <body>
+    <header>
+        <label for="">Pelicula</label>
+        <input type="text" id="input">
+        <input type="submit" id="enviar" value="Buscar">
+
+        <label for="">Año</label>
+        <input type="text" id="input2">
+        <input type="submit" id="enviar2" value="Buscar">
+    </header>
     <div id="contenedor"></div>
     <button id="Cargar">Cargar más Peliculas</button>
 </body>
