@@ -1,18 +1,106 @@
-  body{
-            background-image:url("https://img.freepik.com/fotos-premium/campo-estrellas-contra-cielo-noche_1048944-25328435.jpg?semt=ais_hybrid&w=740&q=80");
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-        }
-        #contenedor{
-            margin-top: 75px;
-            width: 50%;
-            height: 50%;
-            display: grid;
-            grid-template-columns: 50vh 50vh 50vh 50vh;
-        }
-        #Cargar{
-            background-color: white;
-            color: black;
-        }
+body{
+    background-image:url("https://img.freepik.com/fotos-premium/campo-estrellas-contra-cielo-noche_1048944-25328435.jpg?semt=ais_hybrid&w=740&q=80");
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedor{
+    margin-top: 75px;
+    width: 50%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 50vh 50vh 50vh 50vh;
+}
+
+#Cargar{
+    background-color: white;
+    color: black;
+}
+
+header {
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    height: 70px;
+    margin-right: auto;
+}
+
+header label,
+header input {
+    display: inline-block;
+}
+
+header input[type="text"] {
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    border-radius: 6px;
+}
+
+header input[type="submit"] {
+    padding: 6px 12px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#peli {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1000;
+}
+
+.padre {
+    background-color: rgba(0,0,0,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90vw;
+    max-width: 700px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.divPeli {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.imgPeli {
+    width: 150px;
+    height: auto;
+    max-height: 60vh;
+    border-radius: 6px;
+}
+
+button.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+

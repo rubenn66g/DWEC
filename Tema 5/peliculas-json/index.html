@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buscador</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="index.js"></script>
 </head>
 <body>
-    <header>
-        <label for="">Pelicula</label>
-        <input type="text" id="input">
-        <input type="submit" id="enviar" value="Buscar">
+    <header id="headerArea">
 
-        <label for="">Año</label>
-        <input type="text" id="input2">
-        <input type="submit" id="enviar2" value="Buscar">
+        <div id="logoContainer">
+            <img id="logo" src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-movie-cinema-entertainment-logo-with-neon-sign-effect-vector-illustration-png-image_3669645.jpg" alt="logo">
+        </div>
+
+        <div id="inputsContainer">
+            <label>Pelicula</label>
+            <input type="text" id="input">
+            <input type="submit" id="enviar" value="Buscar">
+
+            <label>Año</label>
+            <input type="text" id="input2">
+            <input type="submit" id="enviar2" value="Buscar">
+        </div>
+
     </header>
+
     <div id="contenedor"></div>
-    <button id="Cargar">Cargar más Peliculas</button>
+    <div id="peli"></div>
+
 </body>
+
 </html>
