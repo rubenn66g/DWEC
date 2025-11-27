@@ -18,6 +18,12 @@ window.onload = () => {
         fetchPeli();
     });
 
+    input.addEventListener("keyup",()=>{
+        if(input.value.length>=3){
+            fetchPeli();
+        }
+    })
+
     input.addEventListener("keydown", (e) => {
         if (e.key == "Enter") {
             fetchPeli();
@@ -40,6 +46,15 @@ window.onload = () => {
     enviar2.addEventListener("click", () => {
         fetchPeliAno();
     });
+
+    let busqueda=document.getElementById("Buscador");
+    let botonBuscador=document.getElementById("botonBuscador");
+    let inicio=document.getElementById("inicio");
+    botonBuscador.addEventListener("click",()=>{
+        busqueda.style.visibility="visible";
+        inicio.style.visibility="hidden";
+        
+    })
 };
 
 function maquetarPelis(contenedor, listaPelis) {
@@ -48,8 +63,9 @@ function maquetarPelis(contenedor, listaPelis) {
         miDiv.addEventListener("click", () => lanzaPeticionDetalle(pelicula.imdbID));
 
         let miImg = document.createElement("img");
+        miImg.className="imagenPeli";
         let miTitle = document.createElement("h2");
-
+        miImg.onerror=(e)=>{e.target.src="https://png.pngtree.com/thumb_back/fw800/background/20250902/pngtree-3d-small-red-error-mark-image_18846840.webp"}
         miImg.src = pelicula.Poster;
         miTitle.textContent = pelicula.Title;
 
@@ -98,6 +114,7 @@ function maquetar1Peli(pelicula){
     div.className="divPeli";
     let Img = document.createElement("img");
     Img.className="imgPeli";
+    Img.onerror=(e)=>{e.target.src="https://png.pngtree.com/thumb_back/fw800/background/20250902/pngtree-3d-small-red-error-mark-image_18846840.webp"}
     let Title = document.createElement("h2");
     Title.className="titulo";
     Img.src = pelicula.Poster;
