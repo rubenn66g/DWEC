@@ -8,15 +8,6 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <div id="inicio">
-        <h1>Buscador de Peliculas</h1>
-        <h2>Descubre miles de películas al instante.
-        Busca por título, por año o explora tu saga favorita.
-        Posters, detalles y mucho más… ¡todo en un clic!
-
-        <h2>Pulsa el botón para comenzar 👉</h2>
-        <button id="botonBuscador">Acceder al Buscador</button>
-    </div>
     <div id="Buscador" style="visibility: hidden;">
         <header id="headerArea">
 
@@ -32,12 +23,27 @@
                 <label>Año</label>
                 <input type="text" id="input2">
                 <input type="submit" id="enviar2" value="Buscar">
-            </div>
 
+                <label for="tipo">Tipo:</label>
+                    <select id="tipo">
+                        <option value="movie">Película</option>
+                        <option value="series">Serie</option>
+                    </select>
+            </div>
+            
         </header>
 
         <div id="contenedor"></div>
         <div id="peli"></div>
+    </div>
+    <div id="inicio">
+        <h1>Buscador de Peliculas</h1>
+        <h2>Descubre miles de películas al instante.
+        Busca por título, por año o explora tu saga favorita.
+        Posters, detalles y mucho más… ¡todo en un clic!
+
+        <h2>Pulsa el botón para comenzar 👉</h2>
+        <button id="botonBuscador">Acceder al Buscador</button>
     </div>
 
 </body>
