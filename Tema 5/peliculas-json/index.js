@@ -34,7 +34,7 @@ window.onload = () => {
 
     input2.addEventListener("keydown", (e) => {
         if (e.key == "Enter") {
-            fetch("http://www.omdbapi.com/?s=" + input.value + "&y=" + input2.value +"&type="+tipo.value+"&apikey=bd04f598&page=1")
+            fetch("https://www.omdbapi.com/?s=" + input.value + "&y=" + input2.value +"&type="+tipo.value+"&apikey=bd04f598&page=1")
                 .then(response => response.json())
                 .then(data => {
                     cont.innerHTML = "";
@@ -79,7 +79,7 @@ function maquetarPelis(contenedor, listaPelis) {
 
 function fetchPeli() {
     cont.innerHTML = "";
-    fetch("http://www.omdbapi.com/?s=" + input.value +"&type="+tipo.value+"&apikey=bd04f598&page=1")
+    fetch("https://www.omdbapi.com/?s=" + input.value +"&type="+tipo.value+"&apikey=bd04f598&page=1")
         .then(response => response.json())
         .then(data => {
             if (data.Search) { 
@@ -88,7 +88,7 @@ function fetchPeli() {
         });
 }
 function fetchPeliAno(){
-    fetch("http://www.omdbapi.com/?s=" + input.value + "&y=" + input2.value +"&type="+tipo.value+ "&apikey=bd04f598&page=1")
+    fetch("https://www.omdbapi.com/?s=" + input.value + "&y=" + input2.value +"&type="+tipo.value+ "&apikey=bd04f598&page=1")
             .then(response => response.json())
             .then(data => {
                 cont.innerHTML = "";
@@ -99,7 +99,7 @@ function fetchPeliAno(){
 }
 
 function lanzaPeticionDetalle(id) {
-     fetch("http://www.omdbapi.com/?apikey=bd04f598&i=" + id + "&plot=full")
+     fetch("https://www.omdbapi.com/?apikey=bd04f598&i=" + id + "&plot=full")
         .then(response => response.json())
         .then(data => {
             maquetar1Peli(data)
@@ -160,7 +160,7 @@ window.onscroll=()=>{
     if(cercaFinal){
         if(!peticionEnCurso){
             peticionEnCurso=true;
-            fetch("http://www.omdbapi.com/?s=" + input.value + "&y=" + input2.value +"&type="+tipo.value+ "&apikey=bd04f598&page=" + contadorPaginas)
+            fetch("https://www.omdbapi.com/?s=" + input.value + "&y=" + input2.value +"&type="+tipo.value+ "&apikey=bd04f598&page=" + contadorPaginas)
                 .then(response => response.json())
                 .then(data => {
                     if (data.Search) {         
