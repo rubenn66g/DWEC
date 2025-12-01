@@ -123,3 +123,8 @@ header select {
     cursor: pointer;
     margin-left: 5px;
 }
+
+.favorito{
+    width: 100px;
+    height: 100px;
+}

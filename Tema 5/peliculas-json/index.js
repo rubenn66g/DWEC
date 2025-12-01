@@ -62,17 +62,26 @@ window.onload = () => {
 function maquetarPelis(contenedor, listaPelis) {
     for (let pelicula of listaPelis) {
         let miDiv = document.createElement("div");
-        miDiv.addEventListener("click", () => lanzaPeticionDetalle(pelicula.imdbID));
-
         let miImg = document.createElement("img");
         miImg.className="imagenPeli";
         let miTitle = document.createElement("h2");
+        let favorito=document.createElement("img");
+        favorito.src="img/estrella2.webp";
         miImg.onerror=(e)=>{e.target.src="https://png.pngtree.com/thumb_back/fw800/background/20250902/pngtree-3d-small-red-error-mark-image_18846840.webp"}
         miImg.src = pelicula.Poster;
         miTitle.textContent = pelicula.Title;
+        favorito.className="favorito";
+        miImg.addEventListener("click", () => lanzaPeticionDetalle(pelicula.imdbID));
+        favorito.addEventListener("click",()=>{
+            if (favorito.src.includes("estrella.png"))
+                favorito.src ="img/estrella2.webp"
+            else
+                favorito.src="img/estrella.png";
 
+        });
         miDiv.appendChild(miImg);
         miDiv.appendChild(miTitle);
+        miDiv.appendChild(favorito);
         contenedor.appendChild(miDiv);
     }
 }
