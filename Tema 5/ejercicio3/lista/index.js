@@ -3,10 +3,17 @@ const botonEnviar = document.getElementById('botonEnviar');
 const listaItems = document.getElementById('listaItems');
 const botonLimpiar = document.getElementById('botonLimpiar');
 
+var listaNotas=JSON.parse(localStorage.getItem("listaNotas"));
+
+if(listaNotas){
+    for(nota of listaNotas){
+        listaItems.appendChild(nota);
+    }
+}
 botonEnviar.addEventListener('click', () => {
     const valor = entradaItem.value.trim();
-    if (valor === '') return;
-
+    listaNotas.push(entradaItem);
+    localStorage.setItem("listaNotas",JSON.stringify(listaNotas));
     const li = document.createElement('li');
 
     const textoItem = document.createElement('span');

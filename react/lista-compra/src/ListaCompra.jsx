@@ -28,7 +28,7 @@ function ListaCompra() {
     }
 
     function borraElemento(id) {
-        setlistaCompra(lista => lista.filter((_, i) => i !== id));
+        setlistaCompra(lista => lista.filter((_, i) => i != id));
     }
 
     function actualizaElemento(nuevoTexto, id) {
