@@ -6,8 +6,15 @@ let input2;
 let enviar2;
 let peticionEnCurso;
 let tipo;
+var pelisFav=[];
 window.onload = () => {
     peticionEnCurso=false;
+
+    pelisFav= JSON.parse(localStorage.getItem("pelisFav"))
+    if(!pelisFav){
+        localStorage.setItem("pelisFav",JSON.stringify([]));
+        pelisFav=[];
+    }
     cont = document.getElementById("contenedor");
     input = document.getElementById("input");
     enviar = document.getElementById("enviar");
@@ -72,13 +79,27 @@ function maquetarPelis(contenedor, listaPelis) {
         miTitle.textContent = pelicula.Title;
         favorito.className="favorito";
         miImg.addEventListener("click", () => lanzaPeticionDetalle(pelicula.imdbID));
-        favorito.addEventListener("click",()=>{
-            if (favorito.src.includes("estrella.png"))
-                favorito.src ="img/estrella2.webp"
-            else
+        favorito.addEventListener("click",(e)=>{
+            if (favorito.src.includes("estrella.png")){
+                favorito.src ="img/estrella2.webp";
+                pelisFav.splice(pelisFav.indexOf(pelicula.imdbID),1);
+                localStorage.setItem("pelisFav",JSON.stringify(pelisFav));
+            }
+            else{
                 favorito.src="img/estrella.png";
-
+                pelisFav.push(pelicula.imdbID);
+                localStorage.setItem("pelisFav",JSON.stringify(pelisFav));
+            }
         });
+        
+        for(peli of pelisFav){
+            if(peli==pelicula.imdbID){
+                favorito.src="img/estrella.png";
+            }
+        }
+
+
+        
         miDiv.appendChild(miImg);
         miDiv.appendChild(miTitle);
         miDiv.appendChild(favorito);
