@@ -6,11 +6,12 @@ let input2;
 let enviar2;
 let peticionEnCurso;
 let tipo;
+let favoritas;
 var pelisFav=[];
 window.onload = () => {
     peticionEnCurso=false;
 
-    pelisFav= JSON.parse(localStorage.getItem("pelisFav"))
+    pelisFav= JSON.parse(localStorage.getItem("pelisFav"));
     if(!pelisFav){
         localStorage.setItem("pelisFav",JSON.stringify([]));
         pelisFav=[];
@@ -23,6 +24,8 @@ window.onload = () => {
     enviar2 = document.getElementById("enviar2");
 
     tipo=document.getElementById("tipo");
+
+    favoritas=document.getElementById("favoritos");
     enviar.addEventListener("click", () => {
         fetchPeli();
     });
@@ -55,6 +58,10 @@ window.onload = () => {
     enviar2.addEventListener("click", () => {
         fetchPeliAno();
     });
+
+    favoritas.addEventListener("click",()=>{
+        lanzaPeticionFavoritos(pelisFav)
+    })
 
     let busqueda=document.getElementById("Buscador");
     let botonBuscador=document.getElementById("botonBuscador");
@@ -134,6 +141,17 @@ function lanzaPeticionDetalle(id) {
         .then(data => {
             maquetar1Peli(data)
         })
+}
+
+function lanzaPeticionFavoritos(id) {
+    cont.innerHTML = "";
+    for(pelifavorita of id){
+        fetch("https://www.omdbapi.com/?apikey=bd04f598&i=" + pelifavorita + "&plot=full")
+        .then(response => response.json())
+        .then(data => {
+            maquetarPelis(cont,[data]);
+        })
+    }
 }
 
 function maquetar1Peli(pelicula){
