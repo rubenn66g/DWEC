@@ -1,68 +1,130 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    background-image:url("https://img.freepik.com/fotos-premium/campo-estrellas-contra-cielo-noche_1048944-25328435.jpg?semt=ais_hybrid&w=740&q=80");
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+#contenedor{
+    margin-top: 75px;
+    width: 50%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 50vh 50vh 50vh 50vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#Cargar{
+    background-color: white;
+    color: black;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+header {
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#logo {
+    height: 70px;
+    margin-right: auto;
+}
+
+header label,
+header input {
+    display: inline-block;
+}
+
+header input[type="text"] {
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    border-radius: 6px;
+}
+
+header input[type="submit"] {
+    padding: 6px 12px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#peli {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1000;
+}
+
+.padre {
+    background-color: rgba(0,0,0,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90vw;
+    max-width: 700px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.divPeli {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow-y: auto;     
+    max-height: 75vh;
+}
+
+.imgPeli {
+    width: 150px;
+    height: auto;
+    max-height: 60vh;
+    border-radius: 6px;
+}
+
+button.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+.imagenPeli{
+    width: 300px;
+    height: 400px;
+}
+#Buscador{
+    margin-top: 0px;
+}
+
+header select {
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.favorito{
+    width: 40px;
+    height: 40px;
 }
